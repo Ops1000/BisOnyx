@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BISonyx - Нейросетевые чат-боты</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #111; /* Сплошной темный фон */
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        nav {
+            background: #0f0f0f;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            margin: 0 25px;
+            color: #00ffcc;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        nav a:hover {
+            color: #ffeb3b;
+            transform: scale(1.15);
+        }
+        section {
+            padding: 120px 20px 50px;
+            text-align: center;
+            min-height: 100vh;
+            scroll-behavior: smooth;
+            position: relative;
+        }
+        h1, h2 {
+            color: #ffeb3b;
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeInDown 1s ease-out;
+        }
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero img.robot {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            opacity: 0.7;
+            animation: float 3s infinite ease-in-out;
+        }
+        .btn {
+            background-color: #00ffcc;
+            color: #000;
+            padding: 18px 40px;
+            border-radius: 30px;
+            font-size: 1.3rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 255, 204, 0.4);
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #ffeb3b;
+            color: #000;
+            transform: scale(1.1);
+        }
+        .case {
+            background: rgba(26, 26, 26, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 800px;
+            box-shadow: 0 0 25px rgba(0, 255, 204, 0.5);
+            animation: slideIn 0.7s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+        .case::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 204, 0.1) 0%, transparent 70%);
+            animation: glow 5s infinite;
+            z-index: 0;
+        }
+        .case h3 {
+            margin: 0;
+            color: #00ffcc;
+            font-size: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .case p {
+            margin: 15px 0;
+            position: relative;
+            z-index: 1;
+        }
+        .case .phone {
+            position: absolute;
+            top: 20px;
+            right: -100px;
+            width: 150px;
+            opacity: 0.8;
+            animation: slideRight 1s ease-out forwards;
+        }
+        .case .before, .case .after {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: #fff;
+        }
+        .case .before { background: #ff4444; }
+        .case .after { background: #00ffcc; }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideRight {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 0.8; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes glow {
+            0% { transform: scale(0.5); opacity: 0.5; }
+            50% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(0.5); opacity: 0.5; }
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#home">Главная</a>
+        <a href="#cases">Кейсы</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1>BISonyx - Нейросетевые чат-боты</h1>
+        <p>Автоматизация продаж и поддержки через AI</p>
+        <a href="https://t.me/BISonyx_Ai" target="_blank" class="btn">Запустить бота</a>
+        <!-- Замените на публичную ссылку на изображение робота, например: <img src="https://i.imgur.com/your-robot-image.jpg" alt="Robot" class="robot"> -->
+        <img src="https://via.placeholder.com/200?text=Add+Public+Robot+Image" alt="Robot" class="robot">
+    </section>
+
+    <section id="cases">
+        <h2>Наши кейсы</h2>
+        <div class="case">
+            <h3>Teenage.kz</h3>
+            <p><span class="before">До:</span> Среднее время ответа: 14 часов, Процент успешных клиентов: 58%, Конверсия в заявку: 4%</p>
+            <p><span class="after">После:</span> Среднее время ответа: 2 секунды, Процент успешных клиентов: 4%, Конверсия в заявку: 38%</p>
+            <p>Средний чек: 175,000 тг, Затраты: 5,000,000 тенге</p>
+            <!-- Замените на публичную ссылку на изображение Teenage.kz, например: <img src="https://i.imgur.com/teenage.jpg" alt="Phone" class="phone"> -->
+            <img src="https://via.placeholder.com/150?text=Add+Teenage.kz+Image" alt="Phone" class="phone">
+        </div>
+        <div class="case">
+            <h3>Ta4ki.kz</h3>
+            <p><span class="before">До:</span> Среднее время ответа: 49 минут, Процент успешных клиентов: 43%, Конверсия в оплату: 6%</p>
+            <p><span class="after">После:</span> Среднее время ответа: 5 секунд, Процент успешных клиентов: 13%, Конверсия в оплату: 43%</p>
+            <p>Средний чек: 53,000 тг</p>
+            <!-- Замените на публичную ссылку на изображение Ta4ki.kz, например: <img src="https://i.imgur.com/ta4ki.jpg" alt="Phone" class="phone"> -->
+            <img src="https://via.placeholder.com/150?text=Add+Ta4ki.kz+Image" alt="Phone" class="phone">
+        </div>
+        <div class="case">
+            <h3>EDA: European Drivers Academy</h3>
+            <p><span class="before">До:</span> Среднее время ответа: 2 часа, Процент успешных клиентов: 47%, Конверсия в оплату: 6%</p>
+            <p><span class="after">После:</span> Среднее время ответа: 5 секунд, Процент успешных клиентов: 1%, Конверсия в оплату: 40%</p>
+            <p>Средний чек: 250,000 тг</p>
+            <!-- Замените на публичную ссылку на изображение EDA, например: <img src="https://i.imgur.com/eda.jpg" alt="Phone" class="phone"> -->
+            <img src="https://via.placeholder.com/150?text=Add+EDA+Image" alt="Phone" class="phone">
+        </div>
+        <div class="case">
+            <h3>Trans Consulting</h3>
+            <p><span class="before">До:</span> Среднее время ответа: 46 минут, Процент успешных клиентов: 26%, Конверсия в консультацию (КЗБ): 30%</p>
+            <p><span class="after">После:</span> Среднее время ответа: 12 секунд, Процент успешных клиентов: 3%, Конверсия в консультация (КЗБ): 39%</p>
+            <p>Средний чек: 175,000 тг, Затраты: 14,000,000 тенге</p>
+            <!-- Замените на публичную ссылку на изображение Trans Consulting, например: <img src="https://i.imgur.com/trans.jpg" alt="Phone" class="phone"> -->
+            <img src="https://via.placeholder.com/150?text=Add+Trans+Consulting+Image" alt="Phone" class="phone">
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Связаться с нами</h2>
+        <p>Тел: +7 777 669 9855</p>
+        <p>Telegram: @BISonyx_Ai</p>
+        <a href="https://t.me/BISonyx_Ai" target="_blank" class="btn">Запустить бота</a>
+    </section>
+</body>
+</html>
